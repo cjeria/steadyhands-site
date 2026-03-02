@@ -172,15 +172,20 @@
       margin-bottom: 64px;
     }
 
-    /* ── Phone mockup ── */
+    /* ── Hero image ── */
     .phone-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      gap: 20px;
       position: relative;
-      max-width: 600px;
+      max-width: 900px;
       margin: 0 auto;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.12);
+      animation: float 5s ease-in-out infinite;
     }
 
     .float-card {
@@ -188,7 +193,7 @@
       background: #fff;
       border-radius: 12px;
       padding: 11px 15px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
       border: 1px solid var(--border);
       font-size: 13px;
       font-weight: 600;
@@ -200,103 +205,8 @@
       z-index: 3;
     }
 
-    .float-card.left  { left: 0; top: 28%; }
-    .float-card.right { right: 0; bottom: 20%; }
-
-    .phone {
-      width: 252px;
-      background: var(--black);
-      border-radius: 40px;
-      padding: 10px;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.22);
-      position: relative;
-      z-index: 2;
-      animation: float 5s ease-in-out infinite;
-    }
-
-    .phone-screen {
-      background: #fff;
-      border-radius: 32px;
-      overflow: hidden;
-      padding: 18px 14px 18px;
-    }
-
-    .phone-notch {
-      width: 64px;
-      height: 5px;
-      background: var(--black);
-      border-radius: 3px;
-      margin: 0 auto 14px;
-    }
-
-    .phone-header {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .streak { font-size: 11px; color: var(--mid); font-weight: 600; }
-
-    .progress-bar {
-      height: 5px;
-      background: var(--surface);
-      border-radius: 3px;
-      margin-bottom: 12px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 55%;
-      background: var(--black);
-      border-radius: 3px;
-    }
-
-    .lesson-card {
-      background: var(--surface);
-      border-radius: 10px;
-      padding: 11px 13px;
-      margin-bottom: 7px;
-      border: 1px solid var(--border);
-    }
-
-    .lesson-card:last-child { margin-bottom: 0; }
-
-    .lesson-card.active {
-      background: var(--black);
-      border-color: var(--black);
-    }
-
-    .lesson-tag {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-      color: var(--light);
-      margin-bottom: 2px;
-    }
-
-    .lesson-card.active .lesson-tag { color: rgba(255,255,255,0.5); }
-
-    .lesson-title {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--dark);
-    }
-
-    .lesson-card.active .lesson-title { color: #fff; }
-
-    .lesson-meta {
-      font-size: 10px;
-      color: var(--light);
-      margin-top: 2px;
-    }
-
-    .lesson-card.active .lesson-meta { color: rgba(255,255,255,0.5); }
+    .float-card.left  { left: -16px; top: 24%; }
+    .float-card.right { right: -16px; bottom: 18%; }
 
     /* ── Stats bar ── */
     .stats-bar {
@@ -604,14 +514,12 @@
       .steps-grid { grid-template-columns: 1fr; gap: 36px; }
       .steps-grid::before { display: none; }
       .float-card { display: none; }
+      .hero-img { border-radius: 10px; }
       .footer-inner { flex-direction: column; text-align: center; gap: 10px; }
       section { padding: 64px 0; }
       .cta-section { padding: 72px 0; }
     }
 
-    @media (max-width: 480px) {
-      .phone { width: 220px; }
-    }
 
     /* ── Animations ── */
     @keyframes float {
@@ -668,44 +576,17 @@
 
     <p class="hero-trust">Free to join &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Be the first to know</p>
 
-    <!-- Phone mockup -->
+    <!-- Hero image -->
     <div class="phone-wrap">
       <div class="float-card left">
         🔥 5-day streak!
       </div>
 
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="phone-notch"></div>
-
-          <div class="phone-header">
-            <span>Today's Lessons</span>
-            <span class="streak">🔥 5</span>
-          </div>
-
-          <div class="progress-bar">
-            <div class="progress-fill"></div>
-          </div>
-
-          <div class="lesson-card active">
-            <div class="lesson-tag">Lesson 1 · Active</div>
-            <div class="lesson-title">What is an Option?</div>
-            <div class="lesson-meta">5 min · Beginner</div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-tag">Lesson 2</div>
-            <div class="lesson-title">Calls vs. Puts</div>
-            <div class="lesson-meta">8 min · Beginner</div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-tag">Lesson 3 · ✓ Done</div>
-            <div class="lesson-title">Strike Prices Explained</div>
-            <div class="lesson-meta">Completed</div>
-          </div>
-        </div>
-      </div>
+      <img
+        class="hero-img"
+        src="https://cdn.prod.website-files.com/6963c82afd1ec7344fee2f1c/6997405ea440d2971114a13d_steady-hands%401-1512x949-2%201.png"
+        alt="Steady Hands app screenshot"
+      />
 
       <div class="float-card right">
         🏆 Achievement unlocked!
